@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.js",
     "build:dev": "webpack --mode development",
-    "dev": "webpack-dev-server --mode=development --config webpack.config.js"
+    "dev": "webpack-dev-server --mode=development --config webpack.config.js",
+    "clean": "rm -rf node_modules && rm -rf package-lock.json && npm i"
   },
   "keywords": [],
   "author": "",
@@ -21,8 +22,6 @@
     "html-webpack-plugin": "^4.3.0",
     "postcss-loader": "^3.0.0",
     "style-loader": "^1.2.1",
-    "stylus": "^0.54.7",
-    "stylus-loader": "^3.0.2",
     "vue": "^2.6.11",
     "vue-loader": "^15.9.2",
     "vue-template-compiler": "^2.6.11",
@@ -33,6 +32,8 @@
   "devDependencies": {
     "css-loader": "^3.6.0",
     "file-loader": "^6.0.0",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^2.5.1",
     "url-loader": "^4.1.0",
     "vue-style-loader": "^4.1.2"
   }

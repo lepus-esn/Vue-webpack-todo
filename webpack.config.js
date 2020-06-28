@@ -14,7 +14,7 @@ module.exports = {
                 test: /\.vue$/,
                 loader: 'vue-loader'
             },
-            {test: /\.css$/,use: ["vue-style-loader", "css-loader"]  },
+            {test: /\.css$/,use: ["vue-style-loader", "css-loader", "stylus-loader"]  },
             {
                 test: /\.(gif|jpg|jpeg|png|svg)$/,
                 loader: 'url-loader',
@@ -29,7 +29,7 @@ module.exports = {
                 loader: 'babel-loader'
             },
             {
-                test: /\.styl$/,
+                test: /\.styl/,
                 // 用stylus处理完后，是css内容，要处理css内容，必须返回上以及，webpack就是一层层向上找，所以多种loader进行搭配
                 use:['style-loader', 'css-loader',
                 {
