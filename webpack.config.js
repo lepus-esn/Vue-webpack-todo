@@ -26,7 +26,16 @@ module.exports = {
             },
             {
                 test: /\.jsx/,
-                loader: 'babel-loader'
+                use: [
+                    {
+                    loader: 'babel-loader',
+                    options:{
+                            presets:[
+                                "@babel/env", "@babel/react"
+                            ]
+                        }
+                    }
+                ]
             },
             {
                 test: /\.styl/,
@@ -52,5 +61,8 @@ module.exports = {
     plugins: [
         new VueLoaderPlugin(),
         new HTMLPlugin() // 用来自动生成index.html文件，作为基准文件
-    ]
+    ],
+    resolve: {
+        extensions: ['.js', '.jsx']
+    }
 }

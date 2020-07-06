@@ -1,5 +1,5 @@
 {
-    "preset": ["env"], // 预设
+    "presets": ["env"], // 预设
     "plugins": [
         "transform-vue-jsx"
     ]
