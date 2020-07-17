@@ -63,6 +63,6 @@ module.exports = {
         new HTMLPlugin() // 用来自动生成index.html文件，作为基准文件
     ],
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx', '.styl']
     }
 }
