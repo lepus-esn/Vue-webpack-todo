@@ -1,6 +1,7 @@
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const HTMLPlugin = require('html-webpack-plugin')
+const HTMLPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     entry: path.join(__dirname,'src/index.js'), // 代表路径拼接
@@ -60,7 +61,8 @@ module.exports = {
     mode: 'development',
     plugins: [
         new VueLoaderPlugin(),
-        new HTMLPlugin() // 用来自动生成index.html文件，作为基准文件
+        new HTMLPlugin(), // 用来自动生成index.html文件，作为基准文件
+        new webpack.HotModuleReplacementPlugin(), // 热更新
     ],
     resolve: {
         extensions: ['.js', '.jsx', '.styl']

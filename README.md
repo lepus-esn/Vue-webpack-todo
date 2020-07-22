@@ -10,3 +10,10 @@
 ## 运行报错解决
 1. of stylus of undefined ,将this.options改成options
 2.
+
+
+## 启动
+1. node server
+2. npm run dev
+
+
