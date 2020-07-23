@@ -39,6 +39,20 @@ module.exports = {
                 ]
             },
             {
+                test: /\.tsx/,
+                loader: 'ts-loader',
+                exclude: /node_modules/,
+                options: {
+                    appendTsSuffixTo: [/\.vue$/]
+                }
+            },
+            {
+                test: /\.ts/,
+                exclude: /node_modules/,
+                enforce: 'pre',
+                loader: 'tslint-loader'
+            },
+            {
                 test: /\.styl/,
                 // 用stylus处理完后，是css内容，要处理css内容，必须返回上以及，webpack就是一层层向上找，所以多种loader进行搭配
                 use:['style-loader', 'css-loader',
@@ -65,6 +79,6 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(), // 热更新
     ],
     resolve: {
-        extensions: ['.js', '.jsx', '.styl']
+        extensions: ['.js', '.jsx', '.styl', '.ts', '.tsx']
     }
 }
