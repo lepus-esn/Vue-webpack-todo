@@ -6,7 +6,7 @@
       <Item :dataSource = 'dataSource'></Item>
       <Tabs :itemData = 'itemData'  @deleteItem = 'deleteItem'></Tabs>
       <Footer></Footer>
-      <Foot></Foot>
+      <clock/>
   </div>
 </template>
 
@@ -16,7 +16,7 @@
   import Item from './todo/item.vue'
   import Todo from './todo/todo.vue'
   import Tabs from './todo/tabs.vue'
-  import Foot from './todo/footer.tsx'
+  import Clock from './clock/index.vue'
    export default {
        components: {
            Header,
@@ -24,7 +24,7 @@
            Item,
            Todo,
            Tabs,
-           Foot
+           Clock
        },
        data() {
             return {

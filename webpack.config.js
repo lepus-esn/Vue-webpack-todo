@@ -39,18 +39,14 @@ module.exports = {
                 ]
             },
             {
-                test: /\.tsx/,
+                test: /\.tsx$/,
                 loader: 'ts-loader',
                 exclude: /node_modules/,
                 options: {
-                    appendTsSuffixTo: [/\.vue$/]
+                    appendTsSuffixTo: [/\.vue$/],
+                    happyPackMode: true,
+                    transpileOnly: true,
                 }
-            },
-            {
-                test: /\.ts/,
-                exclude: /node_modules/,
-                enforce: 'pre',
-                loader: 'tslint-loader'
             },
             {
                 test: /\.styl/,
@@ -79,6 +75,6 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(), // 热更新
     ],
     resolve: {
-        extensions: ['.js', '.jsx', '.styl', '.ts', '.tsx']
+        extensions: ['.js', '.jsx', '.styl', '.ts']
     }
 }
