@@ -1,7 +1,7 @@
 <template>
    <div class = 'item-con'>
    <article class ='list'>
-      <ol v-for='item in dataSource'>
+      <ol v-for='item in dataSource' :key='item'>
         <li>{{item}}</li>
       </ol>
    </article>

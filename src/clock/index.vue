@@ -1,7 +1,7 @@
 <template text='text/javascript'>
    <div class="item-con">
     <div class="title">{{title}}</div>
-    <Time></Time>
+    <Time :time = 'time' :type = 'type'></Time>
    </div>
 </template>
 
@@ -13,7 +13,9 @@
     height 500px
     background-color black
     text-align center
-    line-height  500px
+    justify-content center
+    display  flex
+    flex-direction column
 }
 // text-shadow 水平位移 垂直位移 模糊程度 阴影颜色
 .title {
@@ -29,10 +31,10 @@
 
 
 <script lang='ts'>
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator';
 import Time from './time.vue'
 
-@Component({
+export default  {
     components: {
         Time
     },
@@ -43,8 +45,5 @@ import Time from './time.vue'
             title: '现在是北京时间'
         }
     }
-})
-export default class Clock extends Vue {
-   title = '现在是北京时间';
 }
-<script>
+</script>

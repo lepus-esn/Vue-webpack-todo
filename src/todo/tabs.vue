@@ -1,7 +1,7 @@
 <template text='text/javascript'>
     <div id='tab-con'>
-        <div v-for='item in itemData'>
-            <button name='item' @click='clickItem'>{{item}}</button>
+        <div v-for='item in itemData' :key='item'>
+            <button  name='item' @click='clickItem'>{{item}}</button>
         </div>
    </div>
 </template>
