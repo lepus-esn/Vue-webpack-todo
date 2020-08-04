@@ -3,7 +3,8 @@
     <div class="title">{{title}}</div>
     <div class="item-sub">
     <div  v-for="item in timeData" :key="item.type">
-      <Time  :time = 'item.time' :type = 'item.type'></Time>
+        <Time v-if= "item.type==='SECONDS'":time = 'item.time' :type = 'item.type' style='background-color: #FF1493'></Time>
+        <Time v-if= "item.type !=='SECONDS'" :time = 'item.time' :type = 'item.type' ></Time>
     </div>
     </div>
    </div>
@@ -48,11 +49,23 @@ export default  {
         Time
     },
     created(){
-        const data = new Date();
-        const min = data.get
+        let min = 20;
+        this.timer = setInterval(() => {
+            this.timeData[2].time = (min-1).toString();
+            min = min-1;
+            if(min === 0) {
+                min = 20;
+            }
+        }, 1000)
+    },
+    destoryed() {
+        this.timer = null;
     },
     data() {
         return {
+            redStyle: {
+                'background-color': this.classObject
+            },
             timeData: [
                 {
                     time: '18',
@@ -69,7 +82,16 @@ export default  {
             ],
             time: '12',
             type: 'HOURS',
-            title: '现在是北京时间'
+            title: '现在是北京时间',
+            timer: null,
+            color: '#1E90FF',
+            redColor: '#FF1493',
+        }
+    },
+    computed: {
+        classObject: function (key) {
+            consolo.log('---------------------',key);
+            return key === 'SECONDS' ? 'red': '#1E90FF'
         }
     },
     methods: {

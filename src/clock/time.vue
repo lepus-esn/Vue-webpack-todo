@@ -48,7 +48,8 @@
 export default {
     props: {
         time: String,
-        type: String
+        type: String,
+        color: String
     },
     data() {
         return {
