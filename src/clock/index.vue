@@ -1,7 +1,11 @@
 <template text='text/javascript'>
    <div class="item-con">
     <div class="title">{{title}}</div>
-    <Time :time = 'time' :type = 'type'></Time>
+    <div class="item-sub">
+    <div  v-for="item in timeData" :key="item.type">
+      <Time  :time = 'item.time' :type = 'item.type'></Time>
+    </div>
+    </div>
    </div>
 </template>
 
@@ -27,6 +31,11 @@
     text-shadow 0 0 20px #fdec84
     text-shadow 10px -10px 30px #ffae35            
 }
+.item-sub {
+   display  flex
+   flex-direction row
+   justify-content center
+}
 </style>
 
 
@@ -38,12 +47,33 @@ export default  {
     components: {
         Time
     },
+    created(){
+        const data = new Date();
+        const min = data.get
+    },
     data() {
         return {
+            timeData: [
+                {
+                    time: '18',
+                    type: 'HOURS',  
+                },
+                {
+                    time: '09',
+                    type: 'MINUTES',  
+                },
+                {
+                    time: '06',
+                    type: 'SECONDS',  
+                }
+            ],
             time: '12',
-            type: 'Day',
+            type: 'HOURS',
             title: '现在是北京时间'
         }
+    },
+    methods: {
+
     }
 }
 </script>
