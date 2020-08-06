@@ -8,6 +8,7 @@
       <Footer></Footer>
       <clock/>
       <BoxLoad/>
+      <Triangle/>
   </div>
 </template>
 
@@ -19,6 +20,7 @@
   import Tabs from './todo/tabs.vue'
   import Clock from './clock/index.vue'
   import BoxLoad from './box_load/index.vue'
+  import Triangle from './triangle/index.vue'
    export default {
        components: {
            Header,
@@ -27,7 +29,8 @@
            Todo,
            Tabs,
            Clock,
-           BoxLoad
+           BoxLoad,
+           Triangle
        },
        data() {
             return {
