@@ -7,6 +7,7 @@
       <Tabs :itemData = 'itemData'  @deleteItem = 'deleteItem'></Tabs>
       <Footer></Footer>
       <clock/>
+      <BoxLoad/>
   </div>
 </template>
 
@@ -17,6 +18,7 @@
   import Todo from './todo/todo.vue'
   import Tabs from './todo/tabs.vue'
   import Clock from './clock/index.vue'
+  import BoxLoad from './box_load/index.vue'
    export default {
        components: {
            Header,
@@ -24,7 +26,8 @@
            Item,
            Todo,
            Tabs,
-           Clock
+           Clock,
+           BoxLoad
        },
        data() {
             return {
